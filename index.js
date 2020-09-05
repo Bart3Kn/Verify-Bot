@@ -19,7 +19,7 @@ client.on('message', msg=>{
 
 async function lolFuckJs(msg){
     output = 'kekw'
-    if(msg.channel.id === '751191947472928828'){
+    if(msg.channel.id === '751949524037271633'){
 
         if(msg.author.id !== client.user.id){
             
@@ -33,7 +33,7 @@ async function lolFuckJs(msg){
             if(output === 'nUSED'){
                     
                     msg.delete();
-                    client.channels.cache.get('751176566851239986').send('<@'+msg.member.id+'>'+' Hello there');
+                    client.channels.cache.get('597892982565371907').send('<@'+msg.member.id+'>'+' Hello there');
                     let { cache } = msg.guild.roles;
                     let mRole = cache.find(role => role.name.toLocaleLowerCase() === 'member');
                     msg.member.roles.add(mRole);
