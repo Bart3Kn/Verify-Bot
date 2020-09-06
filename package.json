@@ -4,7 +4,7 @@
   "description": "Im too lazy to do anything manually, so I made this",
   "main": "verify.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node verify.js"
   },
   "author": "Bucket",
