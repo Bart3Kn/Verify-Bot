@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = 'NzUxMTcyNjI3MjYzMTI3NjAz.X1FOBg.8_4oShaWbvQJDJHHY6HIBX-K98A';
+const token = 'NzUxMTcyNjI3MjYzMTI3NjAz.X1FOBg.MY_njSUgHP930GnyiS9GETVQENE';
 const doc = new GoogleSpreadsheet('1tAAkyxHc889A6pXTkDO-atJC5p5n9ftNvNr6yP4waM8');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
@@ -24,7 +24,7 @@ client.on('message', msg => {
 })
 
 async function IDCHECKR(msg){
-    if(msg.author != client.user && msg.channel.id==verifyChannel){ //correct channel
+    if(msg.author != client.user && msg.channel.id==verifyChannel){ //correct channel 
         output = null; //resets output from previous test
         let checkedMsg = msg.content.match(regexTest);
         if(checkedMsg != null){ //checks if message is actually a brunel ID
