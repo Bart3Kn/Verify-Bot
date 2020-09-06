@@ -10,8 +10,8 @@ const { serviceusage_v1beta1 } = require('googleapis');
 
 
 //TO UPDATE THE BOT DATA AND CHANNEL
-const verifyChannel = '';
-const welcomeChanel = '';
+const verifyChannel = '751949524037271633';
+const welcomeChanel = '597892982565371907';
 const regexTest = /^(\d{7})$/;
 
 
