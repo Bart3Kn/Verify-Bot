@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = 'NzUxMTcyNjI3MjYzMTI3NjAz.X1FOBg.MY_njSUgHP930GnyiS9GETVQENE';
+const token = 'NzUxMTcyNjI3MjYzMTI3NjAz.X1FOBg.5BLLC516TETPmlw4ExBxcSY70_Y';
 const doc = new GoogleSpreadsheet('1tAAkyxHc889A6pXTkDO-atJC5p5n9ftNvNr6yP4waM8');
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
