@@ -22,6 +22,9 @@ async function lolFuckJs(msg){
     if(msg.channel.id === '751949524037271633'){
 
         if(msg.author.id !== client.user.id){
+
+            var mesg = msg.content
+            var idString = mesg.mat
             
             const input = msg.content;
 
@@ -48,7 +51,7 @@ async function lolFuckJs(msg){
             }
             else{
                 msg.delete();
-                msg.reply('Try again entering your ID again').then(msg =>{
+                msg.reply('Try again entering your ID').then(msg =>{
                     msg.delete(10000);
                 }).catch(console.error);
             }
