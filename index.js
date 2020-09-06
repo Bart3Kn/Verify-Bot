@@ -41,12 +41,16 @@ async function lolFuckJs(msg){
 
             else if(output == 'USED'){
                 msg.delete();
-                msg.reply('This ID has already been used, if you believe this is an error, message Bartek#1337 or paypal.me/Bart3kn'); 
+                msg.reply('This ID has already been used, if you believe this is an error, message Bartek#1337').then(msg =>{
+                    msg.delete(10000);
+                }).catch(console.error); 
 
             }
             else{
                 msg.delete();
-                msg.reply('Try again');
+                msg.reply('Try again entering your ID again').then(msg =>{
+                    msg.delete(10000);
+                }).catch(console.error);
             }
         }
     }
