@@ -2,7 +2,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token = 'NzUxMTcyNjI3MjYzMTI3NjAz.X1FOBg.5BLLC516TETPmlw4ExBxcSY70_Y';
+const token = 'NzUxMTcyNjI3MjYzMTI3NjAz.X1FOBg.ojQ5DpGnAWbYaODwIQ8YnLhbHeM';
 
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { serviceusage_v1beta1 } = require('googleapis');
@@ -16,6 +16,7 @@ const regexTest = /(\d{7})/;
 client.on('message', msg => {
     if(msg.author.id != client.user.id){
         IDCHECKR(msg);
+        msg.delete;
     }
 })
 
@@ -28,7 +29,7 @@ async function IDCHECKR(msg){
         var checked;
         var flag = false;
         try {
-            let checked = MSG.match(regexTest);
+            checked = MSG.match(regexTest);
             console.log('checked: ', checked[0]);
             flag = true;
         } catch (error) {
@@ -39,7 +40,9 @@ async function IDCHECKR(msg){
         
         if(msg.content != null && flag == true){ //checks if message is actually a brunel ID //ADD REGEX TO THIS AFTER
             //ID is found, running check
-            accessSpreadsheet(msg, checked[0]);
+            var ID = checked[0];
+            accessSpreadsheet(msg, ID);
+            
         }
         else{ //was not able to find a valid ID in message
             console.log('unable to find ID: ', msg.content)
