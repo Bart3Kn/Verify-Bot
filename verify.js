@@ -29,26 +29,23 @@ async function IDCHECKR(msg){
         var flag = false;
         try {
             checked = MSG.match(regexTest);
-            
             flag = true;
+            if(msg.content != null && flag == true){ //checks if message is actually a brunel ID //ADD REGEX TO THIS AFTER
+                //ID is found, running check
+                var ID = checked[0];
+                console.log('Adding member role');
+                accessSpreadsheet(msg, ID);
+                
+            }
+            else{ //was not able to find a valid ID in message
+                console.log('unable to find ID: ', msg.content)
+                msg.reply('Could not find an ID in the message, please only type in your ID')
+            }
             
         } catch (error) {
             console.log('no ID found in regex')
             checked = null;
-        }  
-        console.log(flag);
-        console.log('checked: ', checked[0]);
-        if(msg.content != null && flag == true){ //checks if message is actually a brunel ID //ADD REGEX TO THIS AFTER
-            //ID is found, running check
-            var ID = checked[0];
-            console.log('Adding member role');
-            accessSpreadsheet(msg, ID);
-            
-        }
-        else{ //was not able to find a valid ID in message
-            console.log('unable to find ID: ', msg.content)
-            msg.reply('Could not find an ID in the message, please only type in your ID')
-        }
+        } 
     }
 }
 
@@ -99,5 +96,5 @@ async function accessSpreadsheet(msg, userID){
         }
      }
 }
-
+ 
 client.login(token)
