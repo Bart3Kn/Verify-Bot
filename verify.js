@@ -39,7 +39,7 @@ async function IDCHECKR(msg){
             else{ //was not able to find a valid ID in message
                 console.log('unable to find ID: ', msg.content)
                 msg.reply('Could not find an ID in the message, please only type in your ID').then(msg => {
-                    msg.delete({ timeout: 5000 })
+                    msg.delete({ timeout: 10000 })
                   })
                   .catch(console.error);
                 msg.delete();
@@ -106,8 +106,10 @@ async function accessSpreadsheet(msg, userID){
                 
                 let { cache } = msg.guild.roles;
                 let mRole = cache.find(role => role.name.toLocaleLowerCase() === 'member');
+                let gRole = cache.find(role => role.name.toLocaleLowerCase() === 'guest');
                 try {
                     msg.member.roles.add(mRole);
+                    msg.member.roles.remove(gRole);
                     msg.reply('Role has been added').then(msg => {
                         msg.delete({ timeout: 10000 })
                       })
