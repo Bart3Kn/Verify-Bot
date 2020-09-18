@@ -33,6 +33,10 @@ async function IDCHECKR(msg){
                 //ID is found, running check
                 var ID = checked[0];
                 console.log('Checking Spreadsheet');
+                msg.reply('Looking for your ID in the Spreadsheet').then(msg => {
+                    msg.delete({ timeout: 10000 })
+                  })
+                  .catch(console.error);
                 accessSpreadsheet(msg, ID);
                 
             }
@@ -70,7 +74,7 @@ async function accessSpreadsheet(msg, userID){
 
         if(sheet.getCellByA1(id).value != null){
             var exist0 = sheet.getCellByA1(id).value.localeCompare(userID);
-            console.log(sheet.getCellByA1(fName).value,'a:', exist0, typeof exist0);
+            //console.log(sheet.getCellByA1(fName).value,'a:', exist0, typeof exist0);
         }
         else{
             msg.reply('ID is not in the database, ask Bartek#1337 to update it').then(msg => {
